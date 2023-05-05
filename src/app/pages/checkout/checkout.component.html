@@ -18,11 +18,11 @@
       <mat-radio-button 
         value="pickup"
         (change)="onPickUpOrDelivery(false)"
-        checked
       >Pickup</mat-radio-button>
       <mat-radio-button 
         value="Delivery"
         (change)="onPickUpOrDelivery(true)"
+        checked
       >
         Delivery
       </mat-radio-button>
@@ -68,6 +68,6 @@
     color="primary" 
     type="submit"
     [disabled]="!checkoutForm.form.valid"
-    (click)="onSubmit()"
+    (click)="onSubmit(checkoutForm)"
   >Checkout</button>
 </div>

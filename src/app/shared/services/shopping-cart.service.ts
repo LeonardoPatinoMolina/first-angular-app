@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
-import { Product } from "src/app/pages/products/interfaces/product.interface";
+import { Product } from "../interfaces/product.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +46,12 @@ export class ShoppingCartService{
     this.addToCart(product);
     this.quantityProducts();
     this.calcTotal();
+  }
+
+  resetcart(): void{
+    this.cartSubject.next([])
+    this.totalSubject.next(0)
+    this.quantitySubject.next(0)
+    this.products = [];
   }
 }
